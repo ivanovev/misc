@@ -1,4 +1,0 @@
-[submodule "python-usbtmc"]
-	path = python-usbtmc
-	url = https://github.com/python-ivi/python-usbtmc.git
-	branch = master
