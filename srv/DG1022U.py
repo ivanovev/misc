@@ -1,7 +1,10 @@
 
-import usbtmc
 from ..gui.DG1022U import freq_fmt_cb
 from time import sleep
+try:
+    import usbtmc
+except:
+    pass
 
 def get_instr():
     try:
