@@ -6,7 +6,7 @@ from util.columns import *
 
 def fmt_cb(val, read=True):
     val = float(val)
-    return '%.03g' % val
+    return '%.5f' % val
 
 def get_menu(dev):
     return OD([('Monitor', monitor_cb)])
@@ -17,5 +17,6 @@ def columns():
 def get_mntr(dev):
     data = Data('mntr', send=True, io_cb=dev_serial_io_cb)
     data.add('fetch', wdgt='entry', msg='FETCh?', width=20, fmt_cb=fmt_cb)
+    data.add('diff', wdgt='entry', msg='diff', width=20, fmt_cb=fmt_cb)
     return data
 
