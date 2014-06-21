@@ -40,7 +40,7 @@ def ODP3032_readep81():
     msg = []
     try:
         msg = dev.read(0x81, 200)
-        print_msg(msg)
+        #print_msg(msg)
     except:
         pass
     return ''.join([chr(i) for i in msg])
@@ -55,7 +55,7 @@ def ODP3032_cmd(cmd, param, *args):
     if not dev:
         return ''
     allargs = cmd.split() + param.split() + list(args)
-    print(allargs)
+    #print(allargs)
     msg = [0x26]
     for a in allargs:
         for i in range(0, len(a)):
@@ -68,7 +68,7 @@ def ODP3032_cmd(cmd, param, *args):
     for i in range(0, len(c)):
         msg.append(ord(c[i]))
     msg.append(0x23)
-    print_msg(msg)
+    #print_msg(msg)
     try:
         dev.write(0x03, msg)
     except:

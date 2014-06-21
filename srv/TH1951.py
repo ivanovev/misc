@@ -2,7 +2,7 @@
 from util.serial import query_serial
 from time import time
 
-def TH1951_fetch(port='ttyUSB1'):
+def TH1951_fetch(port='ttyUSB0'):
     """
     Fetch latest reading
     @param port - serial port
@@ -18,7 +18,7 @@ def TH1951_fetch(port='ttyUSB1'):
 tprev = time()
 data = 0
 dt = 10
-def TH1951_diff(port='ttyUSB1'):
+def TH1951_diff(port='ttyUSB0'):
     global tprev, data, dt
     ret = TH1951_fetch(port)
     t1 = time()
