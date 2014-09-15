@@ -1,6 +1,9 @@
 
-import usb
 import argparse, sys
+try:
+    import usb
+except:
+    pass
 
 def get_device():
     if hasattr(get_device, 'dev'):

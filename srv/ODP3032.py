@@ -1,7 +1,10 @@
 
-import usb
 import argparse, sys
 from util.cache import CachedDict
+try:
+    import usb
+except:
+    pass
 
 cache = CachedDict()
 
