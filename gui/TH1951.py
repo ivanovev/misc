@@ -16,7 +16,7 @@ def columns():
 
 def get_mntr(dev):
     data = Data('mntr', send=True, io_cb=dev_serial_io_cb)
-    data.add('fetch', wdgt='entry', msg='FETCh?', width=20, fmt_cb=fmt_cb)
-    data.add('diff', wdgt='entry', msg='diff', width=20, fmt_cb=fmt_cb)
+    data.add('fetch', wdgt='entry', msg='FETCh?', width=10, fmt_cb=fmt_cb)
+    data.add('diff', wdgt='entry', msg='diff', width=10, fmt_cb=fmt_cb)
     return data
 
