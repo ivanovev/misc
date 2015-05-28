@@ -83,7 +83,7 @@ def ODP3032_cmd(cmd, param, *args):
 def ODP3032_SYNCHRO():
     return ODP3032_cmd('SYNCHRO', '0')
 
-def ODP3032_cmdio(cmd, v='', index='0'):
+def ODP3032_cmd(cmd, v='', index='0'):
     if v:
         ODP3032_cmd(cmd, v)
         ODP3032_cmd('SYNCHRO', '0')
@@ -94,47 +94,47 @@ def ODP3032_cmdio(cmd, v='', index='0'):
         return ss[int(index)]
 
 def ODP3032_COMMON(mode=''):
-    return ODP3032_cmdio('COMMON', mode, 1)
+    return ODP3032_cmd('COMMON', mode, 1)
 
 def ODP3032_SW1(v=''):
-    return ODP3032_cmdio('SW1', v, 2)
+    return ODP3032_cmd('SW1', v, 2)
 
 def ODP3032_SCH1V(v=''):
-    return ODP3032_cmdio('SCH1V', v, 5)
+    return ODP3032_cmd('SCH1V', v, 5)
 
 def ODP3032_SCH1C(v=''):
-    return ODP3032_cmdio('SCH1C', v, 6)
+    return ODP3032_cmd('SCH1C', v, 6)
 
 def ODP3032_SW2(v='1'):
-    return ODP3032_cmdio('SW2', v, 3)
+    return ODP3032_cmd('SW2', v, 3)
 
 def ODP3032_SCH2V(v=''):
-    return ODP3032_cmdio('SCH2V', v, 14)
+    return ODP3032_cmd('SCH2V', v, 14)
 
 def ODP3032_SCH2C(v=''):
-    return ODP3032_cmdio('SCH2C', v, 15)
+    return ODP3032_cmd('SCH2C', v, 15)
 
 def ODP3032_SPARAV(v=''):
-    return ODP3032_cmdio('SPARAV', v, 5)
+    return ODP3032_cmd('SPARAV', v, 5)
 
 def ODP3032_SPARAC(v=''):
-    return ODP3032_cmdio('SPARAC', v, 6)
+    return ODP3032_cmd('SPARAC', v, 6)
 
 def ODP3032_SSERIV(v=''):
-    return ODP3032_cmdio('SSERIV', v, 5)
+    return ODP3032_cmd('SSERIV', v, 5)
 
 def ODP3032_SSERIC(v=''):
-    return ODP3032_cmdio('SSERIC', v, 6)
+    return ODP3032_cmd('SSERIC', v, 6)
 
 def ODP3032_SDUAL1V(v=''):
-    return ODP3032_cmdio('SDUAL1V', v, 5)
+    return ODP3032_cmd('SDUAL1V', v, 5)
 
 def ODP3032_SDUAL1C(v=''):
-    return ODP3032_cmdio('SDUAL1C', v, 6)
+    return ODP3032_cmd('SDUAL1C', v, 6)
 
 def ODP3032_SDUAL2V(v=''):
-    return ODP3032_cmdio('SDUAL2V', v, 14)
+    return ODP3032_cmd('SDUAL2V', v, 14)
 
 def ODP3032_SDUAL2C(v=''):
-    return ODP3032_cmdio('SDUAL2C', v, 15)
+    return ODP3032_cmd('SDUAL2C', v, 15)
 
