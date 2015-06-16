@@ -1,6 +1,5 @@
 
 from util.serial import query_serial
-from time import time
 
 def AT4508_cmd(port='ttyUSB0', cmd='IDN?'):
     """
