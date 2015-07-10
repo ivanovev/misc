@@ -30,7 +30,7 @@ def MA24118A_freq(port='ttyACM0', freq=''):
 
 def MA24118A_chold(port='ttyACM0', chold=''):
     """
-    Fetch latest reading
+    Get/set current power sensor state
     @param port - serial port
     @param chold - 0 - Run, 1 - Hold
     """
@@ -38,6 +38,28 @@ def MA24118A_chold(port='ttyACM0', chold=''):
         return MA24118A_cmd(port, 'CHOLD ' + chold)
     else:
         return MA24118A_cmd(port, 'CHOLD?')
+
+def MA24118A_avgtyp(port='ttyACM0', typ=''):
+    """
+    Get/set averaging type
+    @param port - serial port
+    @param typ - 0 – Moving, 1 – Repeat
+    """
+    if typ:
+        return MA24118A_cmd(port, 'AVGTYP' + typ)
+    else:
+        return MA24118A_cmd(port, 'AVGTYP?')
+
+def MA24118A_avgcnt(port='ttyACM0', cnt=''):
+    """
+    Get/set the number of averages
+    @param port - serial port
+    @param cnt - number of averages
+    """
+    if cnt:
+        return MA24118A_cmd(port, 'AVGCNT ' + cnt)
+    else:
+        return MA24118A_cmd(port, 'AVGCNT?')
 
 def MA24118A_pwr(port='ttyACM0'):
     """

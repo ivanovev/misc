@@ -20,5 +20,7 @@ def get_ctrl(dev):
     ctrl = Data('ctrl', send=True, io_cb=dev_serial_io_cb)
     ctrl.add('freq', label='Frequency, GHz', wdgt='spin', value=Data.spn(0.010, 18, 0.0001))
     ctrl.add('chold', label='Sensor state', wdgt='radio', value=OD([('Run', '0'), ('Hold', '1')]))
+    ctrl.add('avgtyp', label='Averaging type', wdgt='radio', value=OD([('Moving', '0'), ('Repeat', '1')]))
+    ctrl.add('avgcnt', label='Average count', wdgt='spin', value=Data.spn(1, 200), text='10')
     return ctrl
 

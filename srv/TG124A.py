@@ -42,9 +42,9 @@ def tg_usb_dispose():
     return ''
 
 def TG124A_reset():
-    """
+    '''
     Reset device
-    """
+    '''
     dev = get_device()
     if dev == None:
         return ''
@@ -56,11 +56,11 @@ def TG124A_reset():
     return '0'
 
 def TG124A_freq(freq='1000'):
-    """
+    '''
     Установка частоты выходного сигнала
     @param amp - частота сигнала [0.1..12400]МГц
     @return freq
-    """
+    '''
     dev = get_device()
     if dev == None:
         return ''
@@ -81,22 +81,22 @@ def TG124A_freq(freq='1000'):
         else:
             msg[0] = 0xFF
             msg[1] = 0xBF
-    """
+    '''
     sys.stdout.write('tg_freq: %g ' % f)
     for i in msg: sys.stdout.write('%.2X ' % i)
     print()
-    """
+    '''
     msg.insert(0, 0x46)
     msg.append(0xC0)
     dev.write(0x02, msg, timeout=200)
     return freq
 
 def TG124A_amp(amp='-25'):
-    """
+    '''
     Установка амплитуды выходного сигнала
     @param amp - амплитуда сигнала [-40..-6]дБм
     @return amp
-    """
+    '''
     dev = get_device()
     if dev == None:
         return ''
