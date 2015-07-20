@@ -72,22 +72,18 @@ def TG124A_freq(freq='1000'):
     msg = []
     for i in c:
         msg.append(i)
-    if msg[0] == 0xC0:
-        msg[0] = 0xC1
-    if msg[1] == 0xC0:
-        if msg[0] >= 0x80:
-            msg[0] = 0x00
-            msg[1] = 0xC1
-        else:
-            msg[0] = 0xFF
-            msg[1] = 0xBF
-    '''
-    sys.stdout.write('tg_freq: %g ' % f)
-    for i in msg: sys.stdout.write('%.2X ' % i)
-    print()
-    '''
+    for i in reversed(range(0, len(msg))):
+        if msg[i] == 0xC0:
+            msg[i] = 0xDB
+            msg.insert(i + 1, 0xDC)
+        elif msg[i] == 0xDB:
+            msg.insert(i + 1, 0xDD)
     msg.insert(0, 0x46)
     msg.append(0xC0)
+    if False:
+        sys.stdout.write('tg_freq: %g ' % f)
+        for i in msg: sys.stdout.write('%.2X ' % i)
+        print()
     dev.write(0x02, msg, timeout=200)
     return freq
 
