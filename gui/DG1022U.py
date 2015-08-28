@@ -59,7 +59,7 @@ def get_ctrl(dev):
     data.add('FUNC', label='Function (select SIN)', wdgt='combo', state='readonly', value=['SIN','SQU','RAMP','PULS','NOIS','DC','USER'], fmt_cb=func_fmt_cb)
     data.add('FREQ', label='Frequency, kHz', wdgt='spin', value={'min':0.001, 'max':25000, 'step':0.001}, fmt_cb=freq_fmt_cb)
     data.add('VOLT:UNIT', label='Voltage units (select VPP)', wdgt='combo', state='readonly', value=['VPP','VRMS','DBM'], fmt_cb=func_fmt_cb)
-    data.add('VOLT', label='Voltage, V', wdgt='spin', value={'min':0.2, 'max':5, 'step':0.1}, fmt_cb=volt_fmt_cb)
+    data.add('VOLT', label='Voltage, V', wdgt='spin', value={'min':0.2, 'max':5, 'step':0.1}, text='0.2', fmt_cb=volt_fmt_cb)
     data.add('VOLT:OFFS', label='Voltage offset, V', wdgt='spin', value={'min':0, 'max':5, 'step':0.1}, fmt_cb=volt_fmt_cb)
     data.add('PHAS', label='Phase, deg', wdgt='spin', value={'min':-180, 'max':180, 'step':1})
     data.add('OUTP', label='Output enable', wdgt='combo', state='readonly', value=['ON', 'OFF'])
