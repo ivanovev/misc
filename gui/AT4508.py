@@ -24,9 +24,9 @@ def get_mntr(dev):
     data = Data('mntra', send=True, io_cb=dev_serial_io_cb)
     for ch in range(1, 9):
         data.add('a%d'%ch,cmd='fetch',wdgt='alarm',msg='CH%d'%ch,fmt_cb=lambda val,read,c=ch:fmt_cb1(val,read,c),send=(ch==1),trace_cb=alarm_trace_cb)
-    data.add_page('mntre', send=False)
+    data.add_page('mntre', send=True)
     for ch in range(1, 9):
-        v = data.add('e%d'%ch,cmd='fetch',wdgt='entry',label='CH%d'%ch,msg='CH%d'%ch,fmt_cb=lambda val,read,c=ch:fmt_cb2(val,read,c))
+        v = data.add('CH%d'%ch, wdgt='entry', label='CH%d'%ch, msg='CH%d'%ch)
     data.cmds.columns = 4
     return data
 
