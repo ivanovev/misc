@@ -1,5 +1,5 @@
 
-from . import gui, srv
+from . import gui, srv, tools
 from util.columns import *
 from util.misc import app_devtypes, app_devdata
 
