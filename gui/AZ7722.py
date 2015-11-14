@@ -1,7 +1,6 @@
 
-from util.mainwnd import monitor_cb
 from collections import OrderedDict as OD
-from util import Data, dev_serial_io_cb
+from util import Data, dev_serial_io_cb, monitor_cb
 from util.columns import *
 
 def get_menu(dev):

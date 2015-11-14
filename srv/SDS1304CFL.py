@@ -32,10 +32,20 @@ def SDS1304CFL_cmd(cmd='*IDN?', *args):
     """
     if len(args):
         cmd += ' ' + ' '.join(args)
-    read = cmd[-1] == '?'
+    cmd = cmd.replace(': ', ':')
+    read = cmd.find('?') != -1
     val = cmd.split(' ')[-1]
     ret = usbtmc_io(cmd, read)
-    return ret if read else val
+    if not read:
+        return val
+    if not val:
+        return ''
+    cc = cmd.split('?')
+    if ret.find(cc[0]) != -1:
+        c = cmd.replace('?', '')
+        ret = ret.replace(c, '')
+        ret = ret.strip(' ,')
+    return ret
 
 def SDS1304CFL_dispose():
     if hasattr(get_instr, 'instr'):
