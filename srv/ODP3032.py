@@ -80,61 +80,64 @@ def ODP3032_cmd(cmd, param, *args):
     #dev.write(0x03, [0x26, 0x53, 0x59, 0x4E, 0x43, 0x48, 0x52, 0x4F, 0x2C, 0x30, 0x2C, 0x36, 0x38, 0x36, 0x23])
     #dev.read(0x81, 200)
 
-def ODP3032_SYNCHRO():
-    return ODP3032_cmd('SYNCHRO', '0')
-
-def ODP3032_cmd(cmd, v='', index='0'):
+def ODP3032_cmd2(cmd, v='', index='0'):
     if v:
         ODP3032_cmd(cmd, v)
         ODP3032_cmd('SYNCHRO', '0')
         return v
     else:
         s = cache.get(lambda: ODP3032_cmd('SYNCHRO', '0'), 'SYNCHRO', duration=3)
-        ss = s.split(',')
-        return ss[int(index)]
+        #print(s)
+        if s:
+            ss = s.split(',')
+            return ss[int(index)]
+        return ''
+
+def ODP3032_SYNCHRO():
+    return ODP3032_cmd2('SYNCHRO', '0')
 
 def ODP3032_COMMON(mode=''):
-    return ODP3032_cmd('COMMON', mode, 1)
+    return ODP3032_cmd2('COMMON', mode, 1)
 
 def ODP3032_SW1(v=''):
-    return ODP3032_cmd('SW1', v, 2)
+    return ODP3032_cmd2('SW1', v, 2)
 
 def ODP3032_SCH1V(v=''):
-    return ODP3032_cmd('SCH1V', v, 5)
+    return ODP3032_cmd2('SCH1V', v, 5)
 
 def ODP3032_SCH1C(v=''):
-    return ODP3032_cmd('SCH1C', v, 6)
+    return ODP3032_cmd2('SCH1C', v, 6)
 
 def ODP3032_SW2(v='1'):
-    return ODP3032_cmd('SW2', v, 3)
+    return ODP3032_cmd2('SW2', v, 3)
 
 def ODP3032_SCH2V(v=''):
-    return ODP3032_cmd('SCH2V', v, 14)
+    return ODP3032_cmd2('SCH2V', v, 14)
 
 def ODP3032_SCH2C(v=''):
-    return ODP3032_cmd('SCH2C', v, 15)
+    return ODP3032_cmd2('SCH2C', v, 15)
 
 def ODP3032_SPARAV(v=''):
-    return ODP3032_cmd('SPARAV', v, 5)
+    return ODP3032_cmd2('SPARAV', v, 5)
 
 def ODP3032_SPARAC(v=''):
-    return ODP3032_cmd('SPARAC', v, 6)
+    return ODP3032_cmd2('SPARAC', v, 6)
 
 def ODP3032_SSERIV(v=''):
-    return ODP3032_cmd('SSERIV', v, 5)
+    return ODP3032_cmd2('SSERIV', v, 5)
 
 def ODP3032_SSERIC(v=''):
-    return ODP3032_cmd('SSERIC', v, 6)
+    return ODP3032_cmd2('SSERIC', v, 6)
 
 def ODP3032_SDUAL1V(v=''):
-    return ODP3032_cmd('SDUAL1V', v, 5)
+    return ODP3032_cmd2('SDUAL1V', v, 5)
 
 def ODP3032_SDUAL1C(v=''):
-    return ODP3032_cmd('SDUAL1C', v, 6)
+    return ODP3032_cmd2('SDUAL1C', v, 6)
 
 def ODP3032_SDUAL2V(v=''):
-    return ODP3032_cmd('SDUAL2V', v, 14)
+    return ODP3032_cmd2('SDUAL2V', v, 14)
 
 def ODP3032_SDUAL2C(v=''):
-    return ODP3032_cmd('SDUAL2C', v, 15)
+    return ODP3032_cmd2('SDUAL2C', v, 15)
 
