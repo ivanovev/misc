@@ -31,7 +31,7 @@ def AT4508_fetch(port='ttyUSB0'):
     return ret
 AT4508_fetch.cd = CachedDict()
 
-def AT4508_CHn(port='ttyUSB0', ch='1'):
+def AT4508_CHn(port='COM5', ch='1'):
     ch = int(ch)
     if ch < 1: ch = 1
     if ch > 8: ch = 8
@@ -43,27 +43,27 @@ def AT4508_CHn(port='ttyUSB0', ch='1'):
             ret = 'N/A'
         return ret
     
-def AT4508_CH1(port='ttyUSB0'):
+def AT4508_CH1(port='COM5'):
     return AT4508_CHn(port, '1')
 
-def AT4508_CH2(port='ttyUSB0'):
+def AT4508_CH2(port='COM5'):
     return AT4508_CHn(port, '2')
 
-def AT4508_CH3(port='ttyUSB0'):
+def AT4508_CH3(port='COM5'):
     return AT4508_CHn(port, '3')
 
-def AT4508_CH4(port='ttyUSB0'):
+def AT4508_CH4(port='COM5'):
     return AT4508_CHn(port, '4')
 
-def AT4508_CH5(port='ttyUSB0'):
+def AT4508_CH5(port='COM5'):
     return AT4508_CHn(port, '5')
 
-def AT4508_CH6(port='ttyUSB0'):
+def AT4508_CH6(port='COM5'):
     return AT4508_CHn(port, '6')
 
-def AT4508_CH7(port='ttyUSB0'):
+def AT4508_CH7(port='COM5'):
     return AT4508_CHn(port, '7')
 
-def AT4508_CH8(port='ttyUSB0'):
+def AT4508_CH8(port='COM5'):
     return AT4508_CHn(port, '8')
 

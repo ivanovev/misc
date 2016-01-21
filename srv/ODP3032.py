@@ -108,7 +108,7 @@ def ODP3032_SCH1V(v=''):
 def ODP3032_SCH1C(v=''):
     return ODP3032_cmd2('SCH1C', v, 6)
 
-def ODP3032_SW2(v='1'):
+def ODP3032_SW2(v=''):
     return ODP3032_cmd2('SW2', v, 3)
 
 def ODP3032_SCH2V(v=''):
