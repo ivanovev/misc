@@ -1,7 +1,7 @@
 
 from serial import Serial
-from time import sleep
 from threading import Thread
+from time import sleep
 
 azth = None
 azport = ''
