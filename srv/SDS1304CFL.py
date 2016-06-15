@@ -56,6 +56,8 @@ def SDS1304CFL_dispose():
 def get_data(dispose_dev=False):
     usbtmc_io('SCDP', False)
     instr = get_instr()
+    if not instr:
+        return
     data = instr.read_raw()
     if dispose_dev:
         SDS1304CFL_dispose()
