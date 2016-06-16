@@ -4,8 +4,8 @@ from copy import deepcopy
 
 from tkinter import messagebox
 
-from util import Data, control_cb
 from util.columns import *
+from util import Data, control_cb
 
 def dg_io_cb(dev, cmd):
     l = len(cmd.split())

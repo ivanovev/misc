@@ -1,7 +1,7 @@
 
 from collections import OrderedDict as OD
-from util import Data, dev_serial_io_cb, alarm_trace_cb, control_cb, monitor_cb
 from util.columns import *
+from util import Data, dev_serial_io_cb, alarm_trace_cb, control_cb, monitor_cb
 
 def get_menu(dev):
     return OD([('Control', control_cb), ('Monitor', monitor_cb)])

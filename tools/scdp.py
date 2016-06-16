@@ -1,7 +1,7 @@
 
 import tkinter as tk
-from util import Control, Data, MyAIO, Obj, dev_io_cb, proxy
 from util.columns import *
+from util import Control, Data, MyAIO, Obj, dev_io_cb, proxy
 
 class Scdp(Control):
     def __init__(self, dev=None, parent=None, title='Screenshot', get_data=None, iw=480, ih=234):

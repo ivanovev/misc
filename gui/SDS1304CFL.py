@@ -2,8 +2,8 @@
 from collections import OrderedDict as OD
 from copy import deepcopy
 
-from util import Data, monitor_cb, process_cb, dev_io_cb
 from util.columns import *
+from util import Data, monitor_cb, process_cb, dev_io_cb
 
 from ..srv.SDS1304CFL import get_data
 from ..tools import Scdp

@@ -1,7 +1,6 @@
 
 import usb
 import usb.util
-import pdb
 from datetime import datetime
 try:
     import usbtmc

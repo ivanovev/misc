@@ -1,7 +1,7 @@
 
 from collections import OrderedDict as OD
-from util import Data, monitor_cb, dev_serial_io_cb, alarm_trace_cb
 from util.columns import *
+from util import Data, monitor_cb, dev_serial_io_cb, alarm_trace_cb
 
 def fmt_cb1(val, read=True, ch=1):
     vv = val.split()
